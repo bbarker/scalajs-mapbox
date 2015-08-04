@@ -1,9 +1,9 @@
-package L.mapbox
+package io.bbarker.L.mapbox
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
-import L._ // FIXME: narrow this down
+import io.bbarker.L._ // FIXME: narrow this down
 
 /**
  * Created by Brandon Elam Barker on 7/22/2015.
