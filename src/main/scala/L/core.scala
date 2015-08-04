@@ -1,11 +1,11 @@
-package io.bbarker.L
+package io.github.bbarker.L
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
 
 import org.scalajs.dom.html.Element
 
-import io.bbarker.L.mapbox._
+import io.github.bbarker.L.mapbox._
 
 /**
  * Created by Brandon Elam Barker on 7/22/2015.
