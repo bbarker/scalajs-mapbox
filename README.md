@@ -43,6 +43,5 @@ APIs can change, even API's like [MPI](https://en.wikipedia.org/wiki/Message_Pas
 
 * [Autowire](https://github.com/lihaoyi/autowire) is a pair of macros that allows you to perform type-safe, reflection-free RPC between Scala systems (Scala-JS or Scala-JVM).
 * [scalajs-google-maps](https://github.com/coreyauger/scalajs-google-maps) is a similar library but for Google Maps instead of the Mapbox ecosystem.
-# Barebone application written in Scala.js
 
 
