@@ -34,6 +34,7 @@ publishTo := {
 
 publishMavenStyle := true
 publishArtifact in Test := false
+organization := "io.github.bbarker"
 
 pomExtra :=
   <url>https://github.com/bbarker/scalajs-mapbox</url>
