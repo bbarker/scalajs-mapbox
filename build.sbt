@@ -23,3 +23,36 @@ libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.8.1",
     "com.lihaoyi" %%% "utest" % "0.3.1" % "test"
 )
+
+publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (version.value.trim.endsWith("SNAPSHOT"))
+        Some("snapshots" at nexus + "content/repositories/snapshots")
+    else
+        Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishMavenStyle := true
+publishArtifact in Test := false
+
+pomExtra :=
+  <url>https://github.com/bbarker/scalajs-mapbox</url>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/</url>
+        </license>
+    </licenses>
+    <scm>
+        <url>git://github.com/bbarker/scalajs-mapbox.git</url>
+        <connection>scm:git://github.com/bbarker/scalajs-mapbox.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>bbarker</id>
+            <name>Brandon Elam Barker</name>
+            <url>http://bbarker.github.io</url>
+        </developer>
+    </developers>
+
+credentials += Credentials(Path.userHome / ".ivy2/.credentials")
