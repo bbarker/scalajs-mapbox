@@ -51,7 +51,8 @@ class FeatureGroup(options: js.Object = null) extends LayerGroup {
 }
 
 @JSName("L.GeoJSON")
-class GeoJSON(options: js.Object = null) extends FeatureGroup {
+class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
+             ) extends FeatureGroup {
 
   def resetStyle(layer: Layer): GeoJSON = js.native
 
@@ -84,6 +85,17 @@ class Popup(options: js.Object = null) extends Layer {
 
 }
 
+@JSName("L.Path")
+class Path(options: js.Object = null) extends Layer {
+
+}
+
+@JSName("L.CircleMarker")
+class CircleMarker(latlng: js.Object,
+                   options: js.Object = null
+                  ) extends Path {
+
+}
 
 
 /*      Other  classes       */
@@ -130,9 +142,13 @@ object Helpers {
 
 @JSName("L")
 object L extends js.Object {
+  def circleMarker(latlng: js.Object,
+                   options: js.Object = null
+                  ): GeoJSON = js.native
+
   def control(options: js.Object): Control = js.native
 
-  def geoJson(geojson: js.Object, options: js.Object = null): GeoJSON = js.native
+  def geoJson(geoJsonFeature: js.Object, options: js.Object = null): GeoJSON = js.native
 
   def tileLayer(urlTemplate: String, options: js.Object = null): TileLayer = js.native
 }
