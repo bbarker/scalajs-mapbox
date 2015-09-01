@@ -34,6 +34,8 @@ class Evented() extends Class {
 @JSName("L.Layer")
 class Layer(options: js.Object = null) extends Evented {
 
+  def addLayer(layer: Layer): Layer = js.native
+
   def addTo(map: mapbox.Map): Layer = js.native
 
 }
@@ -145,6 +147,7 @@ object L extends js.Object {
   def circleMarker(latlng: js.Object,
                    options: js.Object = null
                   ): GeoJSON = js.native
+
 
   def control(options: js.Object): Control = js.native
 
