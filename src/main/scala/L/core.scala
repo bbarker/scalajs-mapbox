@@ -34,17 +34,30 @@ class Evented() extends Class {
 @JSName("L.Layer")
 class Layer(options: js.Object = null) extends Evented {
 
-  def addLayer(layer: Layer): Layer = js.native
+  def addLayer(layer: Layer): Map = js.native
 
   def addTo(map: mapbox.Map): Layer = js.native
+
+  def hasLayer(layer: Layer): Boolean = js.native
+
+  def removeLayer(layer: Layer): Map = js.native
 
 }
 
 @JSName("L.LayerGroup")
 class LayerGroup(options: js.Object = null) extends Layer {
 
+  def setZIndex(zIndex: Int): Layer = js.native
+
 }
 
+@JSName("L.Marker")
+class Marker(latlng: js.Array[Double], options: js.Object = null
+            ) extends Layer {
+
+  def setZIndexOffset(offset: Int): Marker = js.native
+
+}
 @JSName("L.FeatureGroup")
 class FeatureGroup(options: js.Object = null) extends LayerGroup {
 
@@ -65,6 +78,8 @@ class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
 
 @JSName("L.GridLayer")
 class GridLayer(options: js.Object = null) extends Layer {
+
+  def setZIndex(zIndex: Int): Layer = js.native
 
 }
 

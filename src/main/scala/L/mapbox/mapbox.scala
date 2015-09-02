@@ -29,7 +29,6 @@ class FeatureLayer private (mapDescriptor: js.Any,
   def this(mapDescriptor: js.Object = null, //TODO: GeoJSON (feature?)
            options: js.Object = null
             ) = this(mapDescriptor: js.Any, options)
-
 }
 
 
@@ -75,6 +74,12 @@ class Map private (domElement: String,
   def setView(coords: js.Array[Double], zoom: Int): Map = js.native
 
   val attributionControl: ControlAttribution = js.native
+
+  def addLayer(layer: Layer): Map = js.native
+
+  def hasLayer(layer: Layer): Boolean = js.native
+
+  def removeLayer(layer: Layer): Map = js.native
 
 }
 
