@@ -34,8 +34,6 @@ class Evented() extends Class {
 @JSName("L.Layer")
 class Layer(options: js.Object = null) extends Evented {
 
-  def addLayer(layer: Layer): Map = js.native
-
   def addTo(map: mapbox.Map): Layer = js.native
 
   def hasLayer(layer: Layer): Boolean = js.native
@@ -47,7 +45,9 @@ class Layer(options: js.Object = null) extends Evented {
 @JSName("L.LayerGroup")
 class LayerGroup(options: js.Object = null) extends Layer {
 
-  def setZIndex(zIndex: Int): Layer = js.native
+  def addLayer(layer: Layer): LayerGroup = js.native
+
+  def setZIndex(zIndex: Int): LayerGroup = js.native
 
 }
 
