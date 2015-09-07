@@ -5,7 +5,7 @@ name := "scalajs-mapbox"
 
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7" //TODO update to 2.11.7 when have internet
 
 persistLauncher in Compile := true
 

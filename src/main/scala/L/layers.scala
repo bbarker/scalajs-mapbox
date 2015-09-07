@@ -1,6 +1,7 @@
 package io.github.bbarker.L
 
 import scala.scalajs.js
+import scala.scalajs.js.|
 import scala.scalajs.js.annotation.JSName
 
 import org.scalajs.dom.html.Element
@@ -14,11 +15,13 @@ import io.github.bbarker.L.mapbox._
 
 /*      Core Classes      */
 
+@js.native
 @JSName("L.Class")
 class Class() extends js.Object {
 
 }
 
+@js.native
 @JSName("L.Evented")
 class Evented() extends Class {
   def on(
@@ -31,6 +34,7 @@ class Evented() extends Class {
 
 /*      Layer Classes     */
 
+@js.native
 @JSName("L.Layer")
 class Layer(options: js.Object = null) extends Evented {
 
@@ -42,6 +46,7 @@ class Layer(options: js.Object = null) extends Evented {
 
 }
 
+@js.native
 @JSName("L.LayerGroup")
 class LayerGroup(options: js.Object = null) extends Layer {
 
@@ -51,6 +56,7 @@ class LayerGroup(options: js.Object = null) extends Layer {
 
 }
 
+@js.native
 @JSName("L.Marker")
 class Marker(latlng: js.Array[Double], options: js.Object = null
             ) extends Layer {
@@ -58,6 +64,8 @@ class Marker(latlng: js.Array[Double], options: js.Object = null
   def setZIndexOffset(offset: Int): Marker = js.native
 
 }
+
+@js.native
 @JSName("L.FeatureGroup")
 class FeatureGroup(options: js.Object = null) extends LayerGroup {
 
@@ -65,6 +73,7 @@ class FeatureGroup(options: js.Object = null) extends LayerGroup {
 
 }
 
+@js.native
 @JSName("L.GeoJSON")
 class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
              ) extends FeatureGroup {
@@ -76,6 +85,7 @@ class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
 
 }
 
+@js.native
 @JSName("L.GridLayer")
 class GridLayer(options: js.Object = null) extends Layer {
 
@@ -83,30 +93,33 @@ class GridLayer(options: js.Object = null) extends Layer {
 
 }
 
+@js.native
 @JSName("L.TileLayer")
 class TileLayer(options: js.Object = null) extends GridLayer {
 
 }
 
+@js.native
 @JSName("L.Popup")
 class Popup(options: js.Object = null) extends Layer {
 
   def openOn(map: mapbox.Map): Popup = js.native
 
-  def setLatLng(latlng: js.Array[Double]): Popup = js.native
-
   def setContent(content: String): Popup = js.native
 
-  //
+  def setLatLng(latlng: js.Array[Double]): Popup = js.native
+
   var _map: mapbox.Map = js.native
 
 }
 
+@js.native
 @JSName("L.Path")
 class Path(options: js.Object = null) extends Layer {
 
 }
 
+@js.native
 @JSName("L.CircleMarker")
 class CircleMarker(latlng: js.Object,
                    options: js.Object = null
@@ -116,9 +129,11 @@ class CircleMarker(latlng: js.Object,
 
 
 /*      Other  classes       */
+@js.native
 @JSName("L.LatLngBounds")
 class LatLngBounds() extends js.Object
 
+@js.native
 @JSName("L.Control")
 class Control extends Class {
 
@@ -129,11 +144,13 @@ class Control extends Class {
   var onAdd: js.Function1[mapbox.Map, Container] = js.native
 }
 
+@js.native
 @JSName("L.Control.Attribution")
 class ControlAttribution extends Control {
   def addAttribution(text: String): ControlAttribution = js.native
 }
 
+@js.native
 @JSName("L.DomUtil")
 object DomUtil extends js.Object {
   def create(
@@ -145,6 +162,13 @@ object DomUtil extends js.Object {
 
 
 object Helpers {
+
+  /**
+   * String is a URL or mapbox map identifier. Object specifies
+   * a more complexly defined map.
+   */
+  type MapDescriptor = String | js.Object
+
   implicit class PopupExtension(val self: Popup) extends AnyVal {
     def hasMap: Boolean = js.DynamicImplicits.truthValue(
       self._map.asInstanceOf[js.Dynamic]
@@ -157,8 +181,10 @@ object Helpers {
 
 /*     End Layer Classes    */
 
+@js.native
 @JSName("L")
 object L extends js.Object {
+
   def circleMarker(latlng: js.Object,
                    options: js.Object = null
                   ): GeoJSON = js.native

@@ -15,4 +15,5 @@ object ScalaJSExample extends js.JSApp {
    *  This demonstrates unit testing.
    */
   def square(x: Int): Int = x*x
+
 }
