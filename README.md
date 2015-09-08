@@ -3,6 +3,18 @@ A Scala.js interface to [Mapbox](https://github.com/mapbox) and related APIs, li
 
 ## Get started
 
+### Using with Gradle
+
+The following example demonstrates the necessary info:
+
+```gradle
+scala_js_mapbox: "io.github.bbarker:scalajs-mapbox_sjs0.6_2.11:0.1-SNAPSHOT"
+```
+
+As this is a snapshot release (and will be for the near future), you may need to referesh your dependencies from time to time to get updates.
+
+### Compiling
+
 To get started, open `sbt` in this example project, and execute the task
 `fastOptJS`. This creates the file `target/scala-2.11/example-fastopt.js`.
 You can now open `index-fastopt.html` in your favorite Web browser!
