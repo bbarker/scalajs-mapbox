@@ -139,6 +139,7 @@ class Control extends Class {
 
   def addTo(map: mapbox.Map): Control = js.native
 
+
   //FIXME: what is a container, really?
   type Container = js.Object
   var onAdd: js.Function1[mapbox.Map, Container] = js.native
