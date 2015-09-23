@@ -56,5 +56,7 @@ class Map (domElement: String,
 
   def setView(coords: js.Array[Double], zoom: Int): Map = js.native
 
+  def removeControl (control:Control): Map = js.native
+
 }
 
