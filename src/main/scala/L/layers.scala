@@ -78,6 +78,8 @@ class FeatureGroup(options: js.Object = null) extends LayerGroup {
 class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
              ) extends FeatureGroup {
 
+  def addData(geojson: GeoJSON): GeoJSON = js.native
+
   def resetStyle(layer: Layer): GeoJSON = js.native
 
   override
