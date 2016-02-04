@@ -162,6 +162,20 @@ object DomUtil extends js.Object {
 }
 
 
+@js.native
+@JSName("L.Icon")
+class Icon extends Class {
+
+}
+
+
+@js.native
+@JSName("L.DivIcon")
+class DivIcon(geoJsonFeature: js.Object = null, options: js.Object = null
+             ) extends Icon {
+
+}
+
 object Helpers {
 
   /**
@@ -190,6 +204,7 @@ object L extends js.Object {
                    options: js.Object = null
                   ): GeoJSON = js.native
 
+  def divIcon(options: js.Object = null): DivIcon = js.native
 
   def control(options: js.Object): Control = js.native
 
