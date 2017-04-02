@@ -3,13 +3,12 @@ enablePlugins(ScalaJSPlugin)
 
 name := "scalajs-mapbox"
 
-version := "0.1-SNAPSHOT"
+version := "0.1-RC1"
 
-scalaVersion := "2.11.7" //TODO update to 2.11.7 when have internet
+scalaVersion := "2.12.1"
 
-persistLauncher in Compile := true
-
-persistLauncher in Test := false
+scalaJSUseMainModuleInitializer in Compile := true
+scalaJSUseMainModuleInitializer in Test := false
 
 testFrameworks += new TestFramework("utest.runner.Framework")
 
@@ -20,8 +19,8 @@ testFrameworks += new TestFramework("utest.runner.Framework")
 scalacOptions += "-feature"
 
 libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.8.1",
-    "com.lihaoyi" %%% "utest" % "0.3.1" % "test"
+    "org.scala-js" %%% "scalajs-dom" % "0.9.1",
+    "com.lihaoyi" %%% "utest" % "0.4.5" % "test"
 )
 
 publishTo := {
