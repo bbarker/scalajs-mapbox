@@ -16,13 +16,13 @@ import io.github.bbarker.L.mapbox._
 /*      Core Classes      */
 
 @js.native
-@JSName("L.Class")
+@JSGlobal("L.Class")
 class Class() extends js.Object {
 
 }
 
 @js.native
-@JSName("L.Evented")
+@JSGlobal("L.Evented")
 class Evented() extends Class {
   def on(
           types: js.Object,
@@ -35,7 +35,7 @@ class Evented() extends Class {
 /*      Layer Classes     */
 
 @js.native
-@JSName("L.Layer")
+@JSGlobal("L.Layer")
 class Layer(options: js.Object = null) extends Evented {
 
   def addTo(map: mapbox.Map): Layer = js.native
@@ -47,7 +47,7 @@ class Layer(options: js.Object = null) extends Evented {
 }
 
 @js.native
-@JSName("L.LayerGroup")
+@JSGlobal("L.LayerGroup")
 class LayerGroup(options: js.Object = null) extends Layer {
 
   def addLayer(layer: Layer): LayerGroup = js.native
@@ -57,7 +57,7 @@ class LayerGroup(options: js.Object = null) extends Layer {
 }
 
 @js.native
-@JSName("L.Marker")
+@JSGlobal("L.Marker")
 class Marker(latlng: js.Array[Double], options: js.Object = null
             ) extends Layer {
 
@@ -66,7 +66,7 @@ class Marker(latlng: js.Array[Double], options: js.Object = null
 }
 
 @js.native
-@JSName("L.FeatureGroup")
+@JSGlobal("L.FeatureGroup")
 class FeatureGroup(options: js.Object = null) extends LayerGroup {
 
   def setStyle(style: js.Object): FeatureGroup = js.native
@@ -74,7 +74,7 @@ class FeatureGroup(options: js.Object = null) extends LayerGroup {
 }
 
 @js.native
-@JSName("L.GeoJSON")
+@JSGlobal("L.GeoJSON")
 class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
              ) extends FeatureGroup {
 
@@ -88,7 +88,7 @@ class GeoJSON(geoJsonFeature: js.Object = null, options: js.Object = null
 }
 
 @js.native
-@JSName("L.GridLayer")
+@JSGlobal("L.GridLayer")
 class GridLayer(options: js.Object = null) extends Layer {
 
   def setZIndex(zIndex: Int): Layer = js.native
@@ -96,13 +96,13 @@ class GridLayer(options: js.Object = null) extends Layer {
 }
 
 @js.native
-@JSName("L.TileLayer")
+@JSGlobal("L.TileLayer")
 class TileLayer(options: js.Object = null) extends GridLayer {
 
 }
 
 @js.native
-@JSName("L.Popup")
+@JSGlobal("L.Popup")
 class Popup(options: js.Object = null) extends Layer {
 
   def openOn(map: mapbox.Map): Popup = js.native
@@ -116,13 +116,13 @@ class Popup(options: js.Object = null) extends Layer {
 }
 
 @js.native
-@JSName("L.Path")
+@JSGlobal("L.Path")
 class Path(options: js.Object = null) extends Layer {
 
 }
 
 @js.native
-@JSName("L.CircleMarker")
+@JSGlobal("L.CircleMarker")
 class CircleMarker(latlng: js.Object,
                    options: js.Object = null
                   ) extends Path {
@@ -132,11 +132,11 @@ class CircleMarker(latlng: js.Object,
 
 /*      Other  classes       */
 @js.native
-@JSName("L.LatLngBounds")
+@JSGlobal("L.LatLngBounds")
 class LatLngBounds() extends js.Object
 
 @js.native
-@JSName("L.Control")
+@JSGlobal("L.Control")
 class Control extends Class {
 
   def addTo(map: mapbox.Map): Control = js.native
@@ -148,13 +148,13 @@ class Control extends Class {
 }
 
 @js.native
-@JSName("L.Control.Attribution")
+@JSGlobal("L.Control.Attribution")
 class ControlAttribution extends Control {
   def addAttribution(text: String): ControlAttribution = js.native
 }
 
 @js.native
-@JSName("L.DomUtil")
+@JSGlobal("L.DomUtil")
 object DomUtil extends js.Object {
   def create(
               tagName: String,
@@ -165,14 +165,14 @@ object DomUtil extends js.Object {
 
 
 @js.native
-@JSName("L.Icon")
+@JSGlobal("L.Icon")
 class Icon extends Class {
 
 }
 
 
 @js.native
-@JSName("L.DivIcon")
+@JSGlobal("L.DivIcon")
 class DivIcon(geoJsonFeature: js.Object = null, options: js.Object = null
              ) extends Icon {
 
@@ -199,7 +199,7 @@ object Helpers {
 /*     End Layer Classes    */
 
 @js.native
-@JSName("L")
+@JSGlobal("L")
 object L extends js.Object {
 
   def circleMarker(latlng: js.Object,

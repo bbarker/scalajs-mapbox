@@ -14,7 +14,7 @@ import Helpers._
 
 
 @js.native
-@JSName("L.mapbox.FeatureLayer")
+@JSGlobal("L.mapbox.FeatureLayer")
 class FeatureLayer (mapDescriptor: MapDescriptor = null,
                     options: js.Object = null
                    ) extends FeatureGroup {
@@ -23,7 +23,7 @@ class FeatureLayer (mapDescriptor: MapDescriptor = null,
 }
 
 @js.native
-@JSName("L.mapbox")
+@JSGlobal("L.mapbox")
 object mapBox extends js.Object {
   var accessToken: String = js.native
 
@@ -33,7 +33,7 @@ object mapBox extends js.Object {
 }
 
 @js.native
-@JSName("L.mapbox.map")
+@JSGlobal("L.mapbox.map")
 class Map (domElement: String,
            mapDescriptor: MapDescriptor,
            options: js.Object = null
